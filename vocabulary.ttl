@@ -15,165 +15,161 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
-@prefix wedcc: <hthttps://w3id.org/ontoforge/wedcc> .
+@prefix wedcc: <https://w3id.org/ontoforge/wedcc#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://hthttps://w3id.org/ontoforge/wedcc> a skos:ConceptScheme;
+<https://w3id.org/ontoforge/wedcc#> a skos:ConceptScheme;
   dct:creator "Wind Europe"@en;
   dct:description "A data classification scheme addressing the major types of data used in the wind energy sector. This scheme aims to guide and facilitate the sector-specific implementation of relevant data regulation."@en;
   dct:license <http://creativecommons.org/licenses/by/4.0/>;
   dct:title "Wind Europe Data Categories and Classes"@en;
   owl:versionInfo "0.0.1"@en;
-  skos:hasTopConcept <hthttps://w3id.org/ontoforge/wedccDataCategory>, <hthttps://w3id.org/ontoforge/wedccDataClass>;
+  skos:hasTopConcept wedcc:DataCategory, wedcc:DataClass;
   skos:prefLabel "WEDCC"@en .
 
-<hthttps://w3id.org/ontoforge/wedccDataClass> a skos:Concept;
+wedcc:DataClass a skos:Concept;
   skos:definition "A data class categorizes information according to its sensitivity and the level of confidentiality required. This classification governs the security protocols and sharing restrictions applied to the data."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
-  skos:narrower <hthttps://w3id.org/ontoforge/wedccConfidentialData>, <hthttps://w3id.org/ontoforge/wedccCriticalData>,
-    <hthttps://w3id.org/ontoforge/wedccPersonalData>, <hthttps://w3id.org/ontoforge/wedccPublicData>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
+  skos:narrower wedcc:ConfidentialData, wedcc:CriticalData, wedcc:PersonalData, wedcc:PublicData;
   skos:prefLabel "Data Class"@en;
-  skos:topConceptOf <http://hthttps://w3id.org/ontoforge/wedcc> .
+  skos:topConceptOf <https://w3id.org/ontoforge/wedcc#> .
 
-<hthttps://w3id.org/ontoforge/wedccCriticalData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataClass>;
+wedcc:CriticalData a skos:Concept;
+  skos:broader wedcc:DataClass;
   skos:definition "Data that must be protected with the highest level of confidentiality and security measures and should only be shared under exceptional circumstances, such as for legal, regulatory, audit or security purposes."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Critical Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccPersonalData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>, <hthttps://w3id.org/ontoforge/wedccDataClass>;
+wedcc:PersonalData a skos:Concept;
+  skos:broader wedcc:DataCategory, wedcc:DataClass;
   skos:definition "Any information that can identify an individual, either directly or indirectly, such as names, identification numbers, location data, or online identifiers."@en,
     "Information that identifies or relates to individuals involved in the wind energy sector, such as employees, contractors, or customers."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Personal Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccConfidentialData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataClass>;
+wedcc:ConfidentialData a skos:Concept;
+  skos:broader wedcc:DataClass;
   skos:definition "Data that may be shared under specific agreements between parties but requires protection to ensure it is only accessible to authorized individuals."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Confidential Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccPublicData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataClass>;
+wedcc:PublicData a skos:Concept;
+  skos:broader wedcc:DataClass;
   skos:definition "Data that can be shared freely without any restrictions or need for confidentiality."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Public Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccDataCategory> a skos:Concept;
+wedcc:DataCategory a skos:Concept;
   skos:definition "A data category classifies information based on its content, function, or subject area within the wind energy domain."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
-  skos:narrower <hthttps://w3id.org/ontoforge/wedccCommunityandSocialImpactData>, <hthttps://w3id.org/ontoforge/wedccConstructionData>,
-    <hthttps://w3id.org/ontoforge/wedccDecommissioningData>, <hthttps://w3id.org/ontoforge/wedccDevelopmentData>,
-    <hthttps://w3id.org/ontoforge/wedccEconomicandMarketData>, <hthttps://w3id.org/ontoforge/wedccEnergyProductionData>,
-    <hthttps://w3id.org/ontoforge/wedccEnvironmentalImpactData>, <hthttps://w3id.org/ontoforge/wedccForecastingandpredictiveData>,
-    <hthttps://w3id.org/ontoforge/wedccGridIntegrationData>, <hthttps://w3id.org/ontoforge/wedccMaintenanceandReliabilityData>,
-    <hthttps://w3id.org/ontoforge/wedccPersonalData>, <hthttps://w3id.org/ontoforge/wedccRawDatafromWindTurbines>,
-    <hthttps://w3id.org/ontoforge/wedccRegulatoryandComplianceData>, <hthttps://w3id.org/ontoforge/wedccRepoweringData>,
-    <hthttps://w3id.org/ontoforge/wedccSecurityRelatedData>, <hthttps://w3id.org/ontoforge/wedccTradeSecrets>,
-    <hthttps://w3id.org/ontoforge/wedccTurbineandWindFarmOperationalData>, <hthttps://w3id.org/ontoforge/wedccWindResourceAssessmentData>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
+  skos:narrower wedcc:CommunityandSocialImpactData, wedcc:ConstructionData, wedcc:DecommissioningData,
+    wedcc:DevelopmentData, wedcc:EconomicandMarketData, wedcc:EnergyProductionData, wedcc:EnvironmentalImpactData,
+    wedcc:ForecastingandpredictiveData, wedcc:GridIntegrationData, wedcc:MaintenanceandReliabilityData,
+    wedcc:PersonalData, wedcc:RawDatafromWindTurbines, wedcc:RegulatoryandComplianceData,
+    wedcc:RepoweringData, wedcc:SecurityRelatedData, wedcc:TradeSecrets, wedcc:TurbineandWindFarmOperationalData,
+    wedcc:WindResourceAssessmentData;
   skos:prefLabel "Data Category"@en;
-  skos:topConceptOf <http://hthttps://w3id.org/ontoforge/wedcc> .
+  skos:topConceptOf <https://w3id.org/ontoforge/wedcc#> .
 
-<hthttps://w3id.org/ontoforge/wedccWindResourceAssessmentData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:WindResourceAssessmentData a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Data on wind characteristics at a location, including wind speed, direction, and variability, essential for assessing potential energy output and project feasibility."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Wind Resource Assessment Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccEnergyProductionData> a skos:Concept;
+wedcc:EnergyProductionData a skos:Concept;
   skos:altLabel "Control and Command Data"@en;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+  skos:broader wedcc:DataCategory;
   skos:definition "Information on electricity generated by wind turbines, covering energy output, capacity factors, efficiency rates, and production variations."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Energy Production Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccTurbineandWindFarmOperationalData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:TurbineandWindFarmOperationalData a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Details on turbine and wind farm performance, including rotor speed, power output, downtime, faults, maintenance, and overall efficiency."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Turbine and Wind Farm Operational Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccGridIntegrationData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:GridIntegrationData a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Data on how wind energy systems connect and interact with the grid, covering power quality, grid stability, load balancing, and energy storage."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Grid Integration Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccForecastingandpredictiveData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:ForecastingandpredictiveData a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Data used to predict future wind conditions and energy production, including meteorological forecasts, historical trends, and models."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Forecasting and predictive Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccEconomicandMarketData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:EconomicandMarketData a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Financial and market information related to wind energy projects, including costs, revenue, pricing, market demand, investments, and incentives."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Economic and Market Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccEnvironmentalImpactData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:EnvironmentalImpactData a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Information on the environmental effects of wind projects, including wildlife interactions, habitat changes, noise, visual impacts, and ecological footprint."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Environmental Impact Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccMaintenanceandReliabilityData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:MaintenanceandReliabilityData a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Information on the maintenance schedules, reliability, and performance issues of wind turbines and associated infrastructure."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Maintenance and Reliability Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccRegulatoryandComplianceData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:RegulatoryandComplianceData a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Data related to compliance with local, national, and international regulations, standards, and policies affecting wind energy projects."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Regulatory and Compliance Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccCommunityandSocialImpactData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:CommunityandSocialImpactData a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Information on the social impact of wind energy projects, including community engagement, public acceptance, and social benefits."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Community and Social Impact Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccTradeSecrets> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:TradeSecrets a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Trade secrets data in the wind energy sector includes confidential information like proprietary designs, technologies, and strategies that offer a competitive advantage."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Trade Secrets"@en .
 
-<hthttps://w3id.org/ontoforge/wedccRawDatafromWindTurbines> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:RawDatafromWindTurbines a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Raw data from wind turbines includes unprocessed information on operational metrics like wind speed, power output, and turbine performance."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Raw Data from Wind Turbines"@en .
 
-<hthttps://w3id.org/ontoforge/wedccConstructionData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:ConstructionData a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Data related to the cost, timeline, materials, suppliers, risk management, and commissioning."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Construction Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccDevelopmentData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:DevelopmentData a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Data related to the information collected and analysed during the planning and construction phase of a wind energy project, including site selection, environmental impact assessments, permitting, design specifications, and project timelines."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Development Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccRepoweringData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:RepoweringData a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Information related to the upgrading or replacement of existing wind turbines with newer, more efficient technology to extend the lifespan and improve performance."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Repowering Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccDecommissioningData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:DecommissioningData a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Information concerning the process of safely decommissioning and removing wind turbines and associated infrastructure at the end of a wind farm's operational life, including details on procedures, costs, environmental impacts, and site restoration."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Decommissioning Data"@en .
 
-<hthttps://w3id.org/ontoforge/wedccSecurityRelatedData> a skos:Concept;
-  skos:broader <hthttps://w3id.org/ontoforge/wedccDataCategory>;
+wedcc:SecurityRelatedData a skos:Concept;
+  skos:broader wedcc:DataCategory;
   skos:definition "Information on measures to protect systems, infrastructure, and data from threats and vulnerabilities in the wind energy sector."@en;
-  skos:inScheme <http://hthttps://w3id.org/ontoforge/wedcc>;
+  skos:inScheme <https://w3id.org/ontoforge/wedcc#>;
   skos:prefLabel "Security Related Data"@en .
